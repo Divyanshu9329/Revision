@@ -2,4 +2,26 @@ JavaScript is a client-side Scripting Language
 
 JS >> Browser >> JS Enginge
 
-S
+why JavaScript
+1. Validation
+2. Effects
+3. DHTML (Dynamic HTML) : DOM Maniputaion
+
+--------------------------------------------------------------------------------------
+
+
+JavaScript is a Functional Programming Language.
+
+Their are two types of Language
+1. Typed :  c,c++,java
+    if want variable then declare first
+    once variable declare its type of value storing is fixed
+
+    + it has type safty
+
+
+2. NonTypes : JS Python
+    its opposite of typed 
+    we directly initialize we don't need to declare it first.
+    it don't have type safty
+    it is better when we don't know the type of data we will store.
