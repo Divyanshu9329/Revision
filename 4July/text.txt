@@ -1,0 +1,5 @@
+JavaScript is a client-side Scripting Language
+
+JS >> Browser >> JS Enginge
+
+S

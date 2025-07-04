@@ -1,0 +1,33 @@
+<!-- html will send data to the action file i.e., hello.html
+        to make mandatory of a input we make it by validation
+        validation is of two type 
+        1st client-side
+        2nd server-side
+        
+        in client validation
+        1st is " required"
+        2nd is length (minlength and maxlength)
+        3rd is range  (If input is number type we use min and max to set limit)
+        4th is email 
+        5th is number
+    
+
+
+selectors in styling
+Tag
+ID
+class
+
+we use id selector when we have multiple web pages to make id with same id we can apply css on all web pages at same time useing id
+id must always me unique
+
+class is used when we want to give multiple tags same style  
+one element can have multiple classes (h1 can have two classed )
+if have 2 classes then it follows the latat style or latest style
+
+combinators
+
+decendent combinators : space
+child combinators : >
+general sibling combinators
+adjacent sibling combinators
