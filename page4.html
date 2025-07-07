@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function fun(eve){
+            var y = eve.target;
+            alert(y.innerText);
+        }
+
+        function fun1(eve){
+            alert(eve.innerText);
+        }
+    </script>
+
+
+<!-- each event has its object. object contain its information like what event has happen and it contain its source(target element) -->
+</head>
+<body>
+    <h1 onclick="fun(event)">Indore</h1>
+    <h2 onclick="fun(event)">Mumbai</h2>
+    <h3 onclick="fun(event)">Delhi</h3>
+    <br>
+    <hr>
+    <br>
+    <h1 onclick="fun1(event.target)">Indore</h1>
+    <h2 onclick="fun1(event.target)">Mumbai</h2>
+    <h3 onclick="fun1(event.target)">Delhi</h3>
+
+    <!-- we can use "this" insted of event.target -->
+
+    <br>
+    <hr>
+    <br>
+    <h1 onclick="fun1(this)">Indore</h1>
+    <h2 onclick="fun1(this)">Mumbai</h2>
+    <h3 onclick="fun1(this)">Delhi</h3>
+</body>
+</html>

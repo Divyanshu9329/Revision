@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <H1>Calculation Demo</H1>
+
+    <input type="number" placeholder="Enter 1st number" id="b1">
+    <input type="number" placeholder="Enter 2nd number" id="b2">
+    <br>
+    <br>
+    <div><b>Result: </b><span id="para"></span></div>
+    <br>
+    <button onclick="calcu()">Add</button>
+
+    <script>
+        function calcu(){
+            var x = parseInt(document.getElementById("b1").value);
+            var y = parseInt(document.getElementById("b2").value);
+
+            var res = document.getElementById("para");
+            res.innerText = x+y;
+        }
+
+    </script>
+
+</body>
+</html>
