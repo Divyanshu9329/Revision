@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const fun = () => {
+            let name = document.getElementById("header");
+            name.innerText = "H1 has changes"; 
+        }
+
+        function fun2(){
+            var obj = document.getElementById("t1");
+            alert(obj.value);
+        }
+        function fun3(){
+            var oj = document.getElementById("t1");
+            oj.value = "Changed value";
+        }
+    </script>
+</head>
+<body>
+    
+    <h1 id="header">Hello World</h1>
+    <button onclick="alert('Hello How are you')">Click ME</button>
+
+    <button onclick="fun()">Hello</button>
+
+    <br>
+    <input type="text" id="t1" value="hello">
+    <br>
+    <button onclick="fun2()">1st but</button>
+    <button onclick="fun3()">2nd but</button>
+
+</body>
+</html>
