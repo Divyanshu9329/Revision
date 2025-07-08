@@ -9,7 +9,10 @@ function init(){
     tb = document.getElementById('tb');
 }
 
-function add(){
+function add(evt){
+
+    evt.preventDefault();
+
     var roll = rollbox.value;
     var name = namebox.value;
     var branch = branchbox.value;
@@ -35,6 +38,24 @@ function add(){
     td6.innerText = dsa;
     var td7 = document.createElement('td');
     td7.innerText = total;
+    var td8 = document.createElement('td');
+    var btn = document.createElement('button')
+    btn.innerText = "Delete";
+    btn.onclick = function(){
+        //tr.remove();
+        // another way
+        // btn.parentElement.parentElement.remove();
+        // another Way
+        // this.parentElement.parentElement.remove();
+        // another way
+
+        var status = confirm("Are you sure to delete this:")
+        if(status){
+            tr.remove();
+        }
+    }
+    td8.appendChild(btn);
+
 
     var tr = document.createElement('tr');
     tr.appendChild(td1);
@@ -44,7 +65,10 @@ function add(){
     tr.appendChild(td5);
     tr.appendChild(td6);
     tr.appendChild(td7);
+    tr.appendChild(td8)
 
     tb.appendChild(tr);
+
+    evt.r
     
 }

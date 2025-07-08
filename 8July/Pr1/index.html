@@ -5,25 +5,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="init()">
-    
+
     <!-- we use onload to run the init function asap the browser loads -->
 
     <h1 id="heading1">Student Management system</h1>
 
-    <div id="input">
-        <input type="text" placeholder="Enter Your Name" id="name">
-        <input type="text" placeholder="Roll Number" id="rollNum">
-        <select id="branch">
+    <div id="input" align="center">
+
+        <form onsubmit="add(event)">
+        <input type="text" placeholder="Enter Your Name" id="name" required>
+        <input type="text" placeholder="Roll Number" id="rollNum" required>
+        <select id="branch" required>
+            <option value="">Choose branch</option>
             <option value="CSE">CSE</option>
             <option value="IT">IT</option>
             <option value="CSIT">CSIT</option>
             <option value="EC">EC</option>
         </select>
-        <input type="number" placeholder=" JavaScript" id="js">
-        <input type="number" placeholder=" DBMS" id="dbms">
-        <input type="number" placeholder=" DSA" id="dsa">
+        <input type="number" placeholder=" JavaScript" id="js" required>
+        <input type="number" placeholder=" DBMS" id="dbms" required>
+        <input type="number" placeholder=" DSA" id="dsa" required>
         <br>
-        <button onclick="add()">Add to table</button>
+        <button>Add to table</button>
+        </form>
     </div>
     <br>
 
@@ -38,6 +42,7 @@
             </th>
             <th>DSA</th>
             <th>total Marks</th>
+            <th>Delete</th>
         </thead>
         <tbody id="tb">
             <td>47</td>
@@ -47,6 +52,7 @@
             <td>44</td>
             <td>55</td>
             <td>44</td>
+            <td><button>Delete</button></td>
         </tbody>
     </table>
 

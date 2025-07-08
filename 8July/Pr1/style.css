@@ -22,11 +22,6 @@ body{
 select{
     width: 172px;
 }
-button{
-    margin-top: 7px;
-    margin-left: 140px;
-
-}
 
 #table{
     border: 2px dotted white;

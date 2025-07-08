@@ -1,4 +1,5 @@
 we want to make that user fill all the inputs only then it adds data into the table
+for that we will use form tag
 
 
 form tag:
@@ -6,4 +7,7 @@ step    1. validation: it check all the inside the form tag if all clear the it 
 
 step    2. onsubmit event
 
-step    3. data server send
+step    3. data server send : in this step it sends data and refresh the page for new data entry
+
+
+in this project we don't want the step 3 to happen as if this happen it removes the data from the screen.
