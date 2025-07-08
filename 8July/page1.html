@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <H4>Student List</H4>
+
+    <input type="text" id="ip1" placeholder="Name please" value="">
+    <button onclick="addName()">Add Student</button>
+    <ol id="lst">
+        <li>Raj</li>
+        <li>Ram</li>
+    </ol>
+
+
+    <script>
+        function addName(){
+            var name = document.getElementById('ip1').value;
+
+            var liObj = document.createElement("li"); // li is created but its empty
+
+            liObj.innerText = name;  
+
+            var lst = document.getElementById('lst');
+
+            lst.appendChild(liObj);
+
+        }
+
+        // now we want to create li using DOM. This li is not present in html.
+        // we will use document.createElement("tag-name");
+    </script>
+</body>
+</html>
