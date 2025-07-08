@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Marks Page :</h1>
+
+    <div>
+        <p>Enter 1st subject Marks: <input type="number" id="first" placeholder="Enter marks" value=""></p><br>
+        <p>Enter 2nd subject Marks: <input type="number" id="second" placeholder="Enter marks" value=""></p><br>
+        <p>Enter 3rd subject Marks: <input type="number" id="third" placeholder="Enter marks" value=""></p><br>
+        <p>Enter 4th subject Marks: <input type="number" id="fourth" placeholder="Enter marks" value=""></p><br>
+        <p>Enter 5th subject Marks: <input type="number" id="fifth" placeholder="Enter marks" value=""></p><br>
+    </div>
+    <p><b>Total: <span id="total"></span></b></p><br>
+    <p><b>Percentage: <span id="per"></span></b></p><br>
+    <p><b>Grade: <span id="gra"></span></b></p><br>
+    <button onclick="cal()">Calculate</button>
+
+    <script>
+        function cal(){
+            var one = parseInt(document.getElementById("first").value);
+            var two = parseInt(document.getElementById("second").value);
+            var three = parseInt(document.getElementById("third").value);
+            var four = parseInt(document.getElementById("fourth").value);
+            var five = parseInt(document.getElementById("fifth").value);
+
+            var total = one+two+three+four+five;
+            var pera = total/5;
+
+            const totalres = document.getElementById("total");
+            totalres.innerText = total;
+
+            const parcentCal = document.getElementById("per");
+            parcentCal.innerText = pera;
+
+            const gradeCal = document.getElementById("gra");
+            if(para >= 90){gradeCal.innerText = "A"}
+            if(para >= 70){gradeCal.innerText = "B"}
+            if(para >= 60){gradeCal.innerText = "C"}
+            if(para >= 50){gradeCal.innerText = "D"}
+            if(pera<=33) {gradeCal.innerText = "F"}
+        }
+    </script>
+</body>
+</html>
