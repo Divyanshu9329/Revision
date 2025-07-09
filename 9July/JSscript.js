@@ -59,3 +59,9 @@ var student = [
 for(var sh of student){
     console.log(sh.name, sh.phone);
 }
+
+
+
+// generally data is transfered in the form of string between differnet technology
+//   in data communication
+

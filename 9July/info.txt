@@ -11,3 +11,17 @@ Stores data in the form of  Key : Value  pair inside a {  }
 keys inside object are also known as properties properties are unique and can't be changed later
 
 
+in data transfer we use JSON 
+generally data is transfered in the form of string between differnet technology
+
+
+in web html didn't identify data 
+
+
+JSON is used to data transfer between differnet technology like node, express and etc.
+JSON is light wait as compaired to XML 
+
+JSON.stringify() to conver obj to JSON
+and
+JSON.parse() to JSON to obj
+

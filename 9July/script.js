@@ -7,22 +7,29 @@ function init(){
     dsabox = document.getElementById('dsa');
 
     tb = document.getElementById('tb');
+    setupData();
 }
 
-function add(evt){
+function setupData(){
+    var data = localStorage.getItem("StudentData");
+    console.log(data);
+    var stuData = JSON.parse(data);
+    for(var sd of stuData){
+        var roll = sd.roll;
+        var name = sd.name;
+        var branch = sd.branch;
+        var js = parseFloat(sd.js);
+        var dbms = parseFloat(sd.dbms);
+        var dsa = parseFloat(sd.dsa);
 
-    evt.preventDefault();
+        createRow(roll,name,branch,js,dbms,dsa);
+    }
+    
+}
 
-    var roll = rollbox.value;
-    var name = namebox.value;
-    var branch = branchbox.value;
-    var js = parseFloat(jsbox.value);
-    var dbms = parseFloat(dbmsbox.value);
-    var dsa = parseFloat(dsabox.value);
-
+function createRow(roll,name,branch,js,dbms,dsa){
+    
     var total = js + dbms + dsa;
-    console.log(total);
-
 
     var td1 = document.createElement('td');
     td1.innerText = roll;
@@ -68,10 +75,25 @@ function add(evt){
     tr.appendChild(td8)
 
     tb.appendChild(tr);
+}
 
-    evt.r
+function add(evt){
+
+    evt.preventDefault();
+
+    var roll = rollbox.value;
+    var name = namebox.value;
+    var branch = branchbox.value;
+    var js = parseFloat(jsbox.value);
+    var dbms = parseFloat(dbmsbox.value);
+    var dsa = parseFloat(dsabox.value);
+
+    createRow(roll, name, branch, js, dbms, dsa);
+
+    evt.target.reset();
     
 }
+
 
 function save () 
     {
@@ -92,5 +114,14 @@ function save ()
             }
             stud.push(obj);
         }
-        console.log(stud);
+        // console.log(stud);
+
+        // var str = JSON.stringify(stud);
+        // console.log(str);
+        // var data = JSON.parse(str);
+        // console.log(data);
+
+        localStorage.setItem("StudentData", JSON.stringify(stud));
+        alert("Data Saved.");
+
     }
