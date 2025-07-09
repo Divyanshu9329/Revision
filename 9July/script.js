@@ -12,7 +12,7 @@ function init(){
 
 function setupData(){
     var data = localStorage.getItem("StudentData");
-    console.log(data);
+    //console.log(data);
     var stuData = JSON.parse(data);
     for(var sd of stuData){
         var roll = sd.roll;
