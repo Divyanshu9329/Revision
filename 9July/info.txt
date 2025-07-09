@@ -1,0 +1,13 @@
+JavaScript Oject 
+****************
+Stores data in the form of  Key : Value  pair inside a {  }
+{
+    roll : 121,
+    name : "vikas",
+    age : 23,
+    city : "Indore"
+}
+
+keys inside object are also known as properties properties are unique and can't be changed later
+
+

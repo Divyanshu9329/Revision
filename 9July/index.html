@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="init()">
+
+    <!-- we use onload to run the init function asap the browser loads. -->
+
+    <h1 id="heading1">Student Management system</h1>
+
+    <div id="input" align="center">
+
+        <form onsubmit="add(event)">
+        <input type="text" placeholder="Enter Your Name" id="name" required>
+        <input type="text" placeholder="Roll Number" id="rollNum" required>
+        <select id="branch" required>
+            <option value="">Choose branch</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="CSIT">CSIT</option>
+            <option value="EC">EC</option>
+        </select>
+        <input type="number" placeholder=" JavaScript" id="js" required>
+        <input type="number" placeholder=" DBMS" id="dbms" required>
+        <input type="number" placeholder=" DSA" id="dsa" required>
+        <br>
+        <button>Add to table</button>
+
+        &nbsp;
+        <button type="button" onclick="save()">Sava Data</button>
+        </form>
+    </div>
+    <br>
+
+    <table id="table" cellspacing="5px" border="1" cellpadding="8px">
+        <thead>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>JavaScript</th>
+            <th>
+                DBMS
+            </th>
+            <th>DSA</th>
+            <th>total Marks</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="tb">
+            <td>47</td>
+            <td>Raj</td>
+            <td>IT</td>
+            <td>33</td>
+            <td>44</td>
+            <td>55</td>
+            <td>44</td>
+            <td><button>Delete</button></td>
+        </tbody>
+    </table>
+
+</body>
+<script src="script.js"></script>
+</html>
