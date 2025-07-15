@@ -1,0 +1,28 @@
+Classes and Objects.
+
+ object : contain features (data) / behaviour (function)
+
+ Encapsulation : wrapping up data and function into a single unit (object).
+
+ Class : It is a place where we define our object.
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+Inheritance : A property in which one class inharie the properties of other class.
+
+
+            : multiple object has 3 type of relationship between them 
+            : |(i)|use a   |(ii)| has a   |(iii)| is a 
+
+            Usa a : when their is no hard connection between Objects 
+
+            Has a : their is a hard connection between objects (obj has a motor etc, pen has a refil)
+                type of Has-A relationship
+                    one to one
+                    one to many
+                    many to many
+                    many to one
+            Is-A : Inheritance is a Is-A type of relationship 
+
+            *************************************************************************
+
