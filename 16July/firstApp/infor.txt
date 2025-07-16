@@ -1,0 +1,7 @@
+Dependency
+
+1. Local Dependency : specific Project
+    npm install --save <ModuleName>
+
+2. Global Dependency : All... projects are Dependent on each other.
+    npm install -g <ModuleName>
