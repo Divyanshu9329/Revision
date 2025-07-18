@@ -32,10 +32,25 @@
                         <a href="/student/delete?roll=<%=ob.roll %>">
                             <b>Delete</b>
                         </a>
+                        &nbsp;
+                        <a href="/student/delete2/<%=ob.roll %>">
+                            <b>Delete</b>
+                        </a>
+                        &nbsp;
+                        <b style="cursor: pointer;" onclick="delStud('<%=ob.roll %>')">Delete</b>
                     </td>
                 </tr>
             <% } %>
         </tbody>
     </table>
+
+    <script>
+        function delStud(roll){
+            const status = confirm("Are you sure to Delete");
+            if(status){
+                window.location ="/student/delete2/"+roll;
+            }
+        }
+    </script>
 </body>
 </html>

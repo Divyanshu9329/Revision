@@ -33,4 +33,11 @@ router.get("/delete",(req,res)=>{
     res.redirect('/student/home');
 })
 
+router.get('/delete2/:roll',(req,res)=>{
+    const {roll} = req.params;
+    students = students.filter(sd=>sd.roll != roll);
+    res.redirect('/student/home');
+
+})
+
 module.exports = router;
