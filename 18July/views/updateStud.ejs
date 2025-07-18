@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Student</h1>
+    <a href="/">Home</a>
+    <a href="/student/home"><b>List of all Students</b></a>
+    <hr>
+
+    <form action="/student/save" method="post">
+    <input type="number" placeholder="Roll Number" name="roll" id="<% =ob.roll %>" readonly>&nbsp;
+    <input type="text" placeholder="Name" name="name" id="<% =ob.name %>" required>&nbsp;
+    <br><br>
+    
+    <input type="number" placeholder="Age" name="age" id="<% =ob.age %>" required>&nbsp;
+    <select name="branch" required">
+    <option value="" id="branch">Select branch</option>
+    <option >IT</option>
+    <option >CS</option>
+    <option >EC</option>
+    </select>
+    <br><br>
+    <button>Save Student</button>
+    </form>
+
+<script>
+    document.getElementById('branch')='<% =ob.branch %>'
+</script>
+
+</body>
+</html>

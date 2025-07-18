@@ -40,4 +40,12 @@ router.get('/delete2/:roll',(req,res)=>{
 
 })
 
+router.post('/update',(req,res)=>{
+    const obj = req.body;
+    //DB Update query
+    students = students.map(sd=>sd.roll == obj.roll?obj:sd);
+    res.redirect('/student/home');
+
+})
+
 module.exports = router;
