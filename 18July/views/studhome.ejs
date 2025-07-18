@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body bgcolor="#919191" text="white">
+    <h2>Student Record</h2>
+    <a href="/">Back to Home</a>
+    <a href="/student/add">Add student</a>
+
+    <br>
+    <hr>
+    <table bordercolor="white" border="1" align="center" cellpadding="12" cellspacing="15">
+
+        <thead>
+            <tr>
+                <th>Roll Num</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Branch</th>
+                <th>Delete Record</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let ob of students){ %>
+                <tr>
+                    <td><%=ob.roll %></td>
+                    <td><%=ob.name %></td>
+                    <td><%=ob.age %></td>
+                    <td> <%=ob.branch %> </td>
+                    <td>
+                        <a href="/student/delete?roll=<%=ob.roll %>">
+                            <b>Delete</b>
+                        </a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

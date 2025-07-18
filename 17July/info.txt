@@ -1,0 +1,17 @@
+get method.
+1. Data URL Concate
+2. No security
+3. send : Only text, no Binary data {like file or image or etc}
+4. Can send only limited data;
+
+Browsing is done using GET
+
+
+Post Method.
+
+no Browsing possible
+
+1. data request encoded.
+2. security
+3. text and Binary data
+4. unlimited data
