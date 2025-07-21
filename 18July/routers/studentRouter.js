@@ -39,6 +39,13 @@ router.get('/delete2/:roll',(req,res)=>{
     res.redirect('/student/home');
 
 })
+router.get('/updateStud',(req,res)=>{
+    const obj = req.body;
+    //DB Update query
+    // students = students.map(sd=>sd.roll == obj.roll?obj:sd);
+    res.redirect('/student/home');
+
+})
 
 router.post('/update',(req,res)=>{
     const obj = req.body;

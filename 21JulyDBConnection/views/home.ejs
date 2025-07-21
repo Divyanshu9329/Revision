@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+    <h1 class="alert-">Student Record</h1>
+    <br>
+    <a href="/"><b>Home</b></a> &nbsp;
+    <a href="/student/add"><b>Add student</b></a> &nbsp;
+    <hr>
+
+    <table border="2px">
+        <thead class="table">
+            <tr>
+                <th>Roll num</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Branch</th>
+                <th>Marks</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let ob of records) {%>
+                <tr>
+                    <td><%=ob.roll %></td>
+                    <td><%=ob.name %></td>
+                    <td><%=ob.mobile %></td>
+                    <td><%=ob.email %></td>
+                    <td><%=ob.branch %></td>
+                    <td><%=ob.marks %></td>
+                </tr>
+                <% } %>
+        </tbody>
+
+    </table>
+
+</body>
+</html>
