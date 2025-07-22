@@ -1,0 +1,9 @@
+sequelize init
+run this command only once at start of the project or at very beg.
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+sequelize db:create
+
+sequelize model:create --name Student --attributes roll:Integer,name:String,mobile:String,branch:String,marks:Float
+
+sequelize db:migrate

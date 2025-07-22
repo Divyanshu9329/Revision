@@ -40,7 +40,7 @@ router.post("/save",(req,res)=>
     cnn.query(quStr,(err)=>
     {
         cnn.end(); // Connection Close
-        res.redirect("/student/home")
+        res.redirect("/students/home")
     });
 })
 
