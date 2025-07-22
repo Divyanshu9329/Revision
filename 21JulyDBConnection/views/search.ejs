@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+    <h1 class="alert-">Student Record</h1>
+    <br>
+    <a href="/"><b>Home</b></a> &nbsp;
+    <hr>
+
+    <select onchange="handleChange(this.value)" class="form-control" name="branch" required>
+        <option value="">Choose Branch</option>
+        <option>CS</option>
+        <option>IT</option>
+        <option>EC</option>
+    </select>
+    <br>
+    <br>
+
+    <table border="2px">
+        <thead class="table">
+            <tr>
+                <th>Roll num</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Branch</th>
+                <th>Marks</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+        function handleChange(branch){
+            // alert(branch);
+            const req = new XMLHttpRequest();
+
+            req.open("GET",`/students/findbybranch/${branch}`);
+
+            req.onreadystatechange = function(){
+                // alert(req.readyState);
+                if(req.readyState == 4){
+                    const records = JSON.parse(req.responseText)
+                    console.log(records);
+                }
+            }
+
+            req.send();
+
+            // alert(req.readyState);
+
+        }
+        /* 
+        readyState.
+        */ 
+    </script>
+</body>
+</html>
