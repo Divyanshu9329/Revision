@@ -4,7 +4,7 @@ const StudRouter = require('./routers/StudRouter');
 
 app.use(express.json());   // POST Data
 
-
+app.use("/student",StudRouter);
 
 
 app.listen(4002,(req,res)=>{

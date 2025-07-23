@@ -7,3 +7,10 @@ sequelize db:create
 sequelize model:create --name Student --attributes roll:Integer,name:String,mobile:String,branch:String,marks:Float
 
 sequelize db:migrate
+
+
+
+Request::::
+1. URL (endpoints)
+2. Method
+3. Body (data)
