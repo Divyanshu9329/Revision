@@ -19,6 +19,7 @@
     <br>
     <br>
 
+    
     <table border="2px">
         <thead class="table">
             <tr>
@@ -31,9 +32,50 @@
                 <th>Operations</th>
             </tr>
         </thead>
+        <tbody id="student-table-body">
+        </tbody>
     </table>
 
     <script>
+    function handleChange(branch) {
+        const req = new XMLHttpRequest();
+
+        req.open("GET", `/students/findbybranch/${branch}`);
+
+        req.onreadystatechange = function () {
+            if (req.readyState === 4 && req.status === 200) {
+                const records = JSON.parse(req.responseText);
+                console.log(records);
+
+                const tableBody = document.getElementById("student-table-body");
+                tableBody.innerHTML = ""; // Clear existing rows
+
+                records.forEach((student) => {
+                    const row = `
+                        <tr>
+                            <td>${student.roll}</td>
+                            <td>${student.name}</td>
+                            <td>${student.mobile}</td>
+                            <td>${student.email}</td>
+                            <td>${student.branch}</td>
+                            <td>${student.marks}</td>
+                            <td>
+                                <a href="/students/edit/${student.roll}">Edit</a> |
+                                <a href="/students/delete/${student.roll}" onclick="return confirm('Are you sure?')">Delete</a>
+                            </td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            }
+        };
+
+        req.send();
+    }
+</script>
+
+
+    <!-- <script>
         function handleChange(branch){
             // alert(branch);
             const req = new XMLHttpRequest();
@@ -56,6 +98,6 @@
         /* 
         readyState.
         */ 
-    </script>
+    </script> -->
 </body>
 </html>
