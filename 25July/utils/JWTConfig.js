@@ -2,11 +2,18 @@ const jwt = require("jsonwebtoken");
 
 const secretKey = "alkjsdfkljasdfklj"
 
-function generateToken(){
+function generateToken(userid,role){
     const token = jwt.sign({userid,role}, secretKey,{
         expiresIn: '5m'
     });
     return token;
 }
 
-module.exports = {generateToken};
+function verifyToken(token, callback){
+    jwt.verify(token, secretKey, (err,tokendata)=>{
+        callback(err,tokendata);
+
+    })
+}
+
+module.exports = {generateToken,verifyToken};
