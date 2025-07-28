@@ -1,0 +1,5 @@
+Authentication / Authorization................
+
+Authentication means allowing or not allowing the user to use our webapp.
+
+Authorization means checking its accessing power.

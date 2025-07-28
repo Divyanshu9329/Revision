@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "divyanshu",
-    "database": "projectDB",
+    "database": "acrodesk",
     "host": "localhost",
     "dialect": "mysql"
   },
