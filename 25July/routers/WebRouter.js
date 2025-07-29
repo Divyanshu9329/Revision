@@ -16,7 +16,7 @@ router.post("/register", async (req, res) => {
         // res.json({msg : "Done"});
         res.json(new ApiResponse(true, "Registration Done", null, null));
     }catch(err){
-        res.json(new ApiResponse(false, "Registration Not Done.",null,null))
+        res.json(new ApiResponse(false, "Registration Not Done.",null,err));
     }
 
 })
