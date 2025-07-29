@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Query extends Model {
     static associate(models) {
       Query.belongsTo(models.User,{
-        foreignKey : "queryby"
+        foreignKey : "queryby", as:"student"
       });
     }
   }

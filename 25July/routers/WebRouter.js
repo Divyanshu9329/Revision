@@ -6,14 +6,18 @@ const ApiResponse = require('../utils/ApiResponse');
 const {generateToken} = require('../utils/JWTConfig')
 
 router.post("/register", async (req, res) => {
-    const obj = req.body;
-    obj.active_status = true;
+    try{
+        const obj = req.body;
+        obj.active_status = true;
 
-    // Server side validation, Password encrypt, email verify (using otp or any verification link)
+        // Server side validation, Password encrypt, email verify (using otp or any verification link)
 
-    await User.create(obj);
-    // res.json({msg : "Done"});
-    res.json(new ApiResponse(true, "Registration Done", null, null));
+        await User.create(obj);
+        // res.json({msg : "Done"});
+        res.json(new ApiResponse(true, "Registration Done", null, null));
+    }catch(err){
+        res.json(new ApiResponse(false, "Registration Not Done.",null,null))
+    }
 
 })
 

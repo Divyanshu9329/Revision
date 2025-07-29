@@ -7,6 +7,7 @@ const server = express();
 server.use(express.json());
 
 server.use("/acrodesk",webRouter)
+server.use("/auth",AuthRouter)
 
 
 server.listen(7979,()=>

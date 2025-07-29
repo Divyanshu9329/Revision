@@ -4,7 +4,7 @@ const secretKey = "alkjsdfkljasdfklj"
 
 function generateToken(userid,role){
     const token = jwt.sign({userid,role}, secretKey,{
-        expiresIn: '5m'
+        expiresIn: '1h'
     });
     return token;
 }
