@@ -4,21 +4,24 @@
 //   )
 // }
 // import {Demo} from './components/Demo'
-import {Try} from './Try'
+// import {Try} from './Try'
 
-import Second from './SecondDemo'
+// import Second from './SecondDemo'
 
-import Demo from './components/Demo'
+// import Demo from './components/Demo'
+
+import Comp1 from "./components/Comp1"
 
 export default function App(){
   return(
     <>
-    <h2>
+    <Comp1/>
+    {/* <h2>
       Hello sir
     </h2>
     <Try/>
     <Second/>
-    <Demo/>
+    <Demo/> */}
     </>
   )
 }
