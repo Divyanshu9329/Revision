@@ -94,7 +94,7 @@ const Student = () => {
             </form>
         </div>
 
-        <div>
+        <div className='text-center'>
             <button className='btn-sm btn-success' onClick={changeFilter}>All</button>
             &nbsp;
             &nbsp;
@@ -103,6 +103,7 @@ const Student = () => {
             &nbsp;&nbsp;
             </>)}
         </div>
+        <br />
 
         <table className='table'>
             <thead>

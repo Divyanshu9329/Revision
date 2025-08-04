@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { where } = require('sequelize');
 const {User} = require('../models/index');
 const ApiResponse = require('../utils/ApiResponse');
+const constants = require('../utils/SystemConstants');
 
 const {generateToken} = require('../utils/JWTConfig')
 
@@ -54,6 +55,10 @@ router.post("/login", async (req, res) => {
             }, null));
         }
     }    
+})
+
+router.get("/constants", (req, res)=>{
+    res.json(new ApiResponse(true, "Constants Data", constants));
 })
 
 module.exports = router;
