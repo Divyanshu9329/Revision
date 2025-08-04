@@ -1,4 +1,33 @@
+import React, { useState, useRef } from 'react';
+
 export default function Login() {
+
+    const [msg, setmsg] = useState("")
+    const emailRef = useRef();
+    const passwordRef = useRef();
+
+    const login = async(e)=>{
+        e.preventDefault();
+        const obj = {
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+        }
+        console.log(obj);
+        const res = await fetch("http://localhost:7979/acrodesk/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        });
+        const response = await res.json();
+        console.log(response);
+        setmsg(response.msg);
+        if(response.status) {
+            e.target.reset();
+    }
+    }
+
     return <>
         <section className="page-heading">
             <div className="container">
@@ -16,7 +45,7 @@ export default function Login() {
         <section className="contact-us">
             <div className="container">
                 <div className="row">
-                    <form id="contact">
+                    <form id="contact" onSubmit={login}>
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="section-heading">
@@ -25,17 +54,18 @@ export default function Login() {
                             </div>
                             <div className="col-lg-12">
                                 <fieldset>
-                                    <input type="email" placeholder="Email" required />
+                                    <input type="email" ref={emailRef} placeholder="Email" required />
                                 </fieldset>
                             </div>
                             <div className="col-lg-12">
                                 <fieldset>
-                                    <input type="password" placeholder="Password" required />
+                                    <input type="password" ref={passwordRef} placeholder="Password" required />
                                 </fieldset>
                             </div>
 
                             <div className="col-lg-12">
                                 <fieldset>
+                                    <b className="text-danger">{msg}</b>&nbsp;
                                     <button type="submit" id="form-submit" className="main-gradient-button">Login</button>
                                 </fieldset>
                             </div>

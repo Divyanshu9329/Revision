@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRef } from "react";
 
-export default function Register() {
+export default function Register() 
+{
 
     const [constants, setconstants] = useState(undefined);
 
-    const useEffect(() => {
-      
-    
-      return () => {
-        second
-      }
-    }, [third])
+    const [msg, setmsg] = useState("")
+
+    useEffect(() => {
+        //loadConstants();
+    }, []);
     
 
     const nameRef = useRef();
@@ -22,10 +21,13 @@ export default function Register() {
 
     const loadConstants = ()=>{
         const pr = fetch("http://localhost:7979/acrodesk/constants");
-        pr.then(res=>console.log(res))
+        pr.then(res=>res.json())
+        .then(response=>{
+            setconstants(response.data);
+        })
         .catch(err=>console.log(err));
     }
-    loadConstants();
+   
 
     const register = async(e)=>{
         e.preventDefault();
@@ -36,7 +38,7 @@ export default function Register() {
             department: departmentRef.current.value,
             role: roleRef.current.value
         }
-
+        console.log(obj);
         const res = await fetch("http://localhost:7979/acrodesk/register", {
             method: "POST",
             headers: {
@@ -44,6 +46,12 @@ export default function Register() {
             },
             body: JSON.stringify(obj)
         });
+        const response = await res.json();
+        console.log(response);
+        setmsg(response.msg);
+        if(response.status) {
+            e.target.reset();
+    }
     }
 
     return <>
@@ -72,7 +80,7 @@ export default function Register() {
                             </div>
                             <div className="col-lg-12">
                                 <fieldset>
-                                    <input type="text" ref={nameRef} placeholder="Name" required />
+                                    <input type="text" ref={nameRef} placeholder="Name" required  />
                                 </fieldset>
                             </div>
                             <div className="col-lg-12">
@@ -90,6 +98,9 @@ export default function Register() {
                                 <fieldset>
                                     <select required ref={departmentRef}>
                                         <option value="">Choose Department</option>
+                                        {constants?.departments.map(dept => (
+                                            <option>{dept}</option>
+                                        ))}
                                     </select>
                                 </fieldset>
                             </div>
@@ -98,12 +109,16 @@ export default function Register() {
                                 <fieldset>
                                     <select required ref={roleRef}>
                                         <option value="">Choose Role</option>
+                                        {constants?.roles.map(role => (
+                                            <option >{role}</option>
+                                        ))}
                                     </select>
                                 </fieldset>
                             </div>
 
                             <div className="col-lg-12">
                                 <fieldset>
+                                    <b className="text-danger">{msg}</b>
                                     <button type="submit" id="form-submit" className="main-gradient-button">Register</button>
                                 </fieldset>
                             </div>
