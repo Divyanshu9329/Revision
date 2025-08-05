@@ -6,6 +6,9 @@ import Register from './Register';
 import Login from './Login';
 import { Route, Routes } from 'react-router-dom';
 import StudentHome from './student/StudentHome';
+import FacultyHome from './faculty/FacultyHome';
+import AdminHome from './admin/AdminHome';
+import HodHome from './hod/HodHome';
 
 export default function App()
 {
@@ -22,6 +25,18 @@ export default function App()
 
       <Route path='/student'>
         <Route path='home' element={<StudentHome/>}/>
+      </Route>
+
+      <Route path='/faculty'>
+        <Route path='home' element={<FacultyHome/>}/>
+      </Route>
+
+      <Route path='/admin'>
+        <Route path='home' element={<AdminHome/>}/>
+      </Route>
+
+      <Route path='/hod'>
+        <Route path='home' element={<HodHome/>}/>
       </Route>
     </Routes>
   </>
