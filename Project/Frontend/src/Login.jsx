@@ -1,10 +1,17 @@
 import React, { useState, useRef } from 'react';
+import { addUserData } from './reduxconfig/UserSlice';
+import {useDispatch} from "react-redux";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
     const [msg, setmsg] = useState("")
     const emailRef = useRef();
     const passwordRef = useRef();
+
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
 
     const login = async(e)=>{
         e.preventDefault();
@@ -24,7 +31,9 @@ export default function Login() {
         console.log(response);
         setmsg(response.msg);
         if(response.status) {
+            dispatch(addUserData(response.data));
             e.target.reset();
+            navigate(`/${response.data.role}/home`)
     }
     }
 

@@ -5,6 +5,7 @@ import Contact from './Contact';
 import Register from './Register';
 import Login from './Login';
 import { Route, Routes } from 'react-router-dom';
+import StudentHome from './student/StudentHome';
 
 export default function App()
 {
@@ -18,6 +19,10 @@ export default function App()
 
       <Route path="/register" element={<Register/>} />
       <Route path="/login" element={<Login/>} />
+
+      <Route path='/student'>
+        <Route path='home' element={<StudentHome/>}/>
+      </Route>
     </Routes>
   </>
 }

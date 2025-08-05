@@ -1,0 +1,5 @@
+Redux : its a JS libraty for managing application state.
+
+1. Action   (object -- type payload)
+2. Reducer  (it will tell what to change. also known a reducer function)
+3. Store   (their must be only one store. It tell the changes )
