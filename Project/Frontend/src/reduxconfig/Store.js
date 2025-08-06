@@ -10,4 +10,10 @@ const store = configureStore({
     }
 });
 
+store.subscribe(()=>{
+    const data = store.getState().userInfo.value;
+    // console.log("run......",data)
+    localStorage.setItem('userinfo',JSON.stringify(data))
+})
+
 export default store;
